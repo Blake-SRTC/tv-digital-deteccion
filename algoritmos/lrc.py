@@ -16,3 +16,11 @@ def lrc(bits_originales):
         contador = 0
 
     return bloque_lrc
+
+def comprobacion_lrc(t_origen, t_ruido):
+    mensaje = ''
+    if t_origen == t_ruido:
+        mensaje = 'Bloque Aceptado'
+    else:
+        mensaje = 'Bloque Rechazado'
+    return mensaje

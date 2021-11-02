@@ -66,8 +66,6 @@ def paginas(num):
 bits_normales=[]
 # Variable global que almacena los bits desglosados detalladamente
 bits_puros=()
-# Variable global que almacena los bits desglosados detalladamente
-bits_codificados=[]
 
 # CONFIG BTN Y LBL
 common_img = PhotoImage(width=1, height=1)

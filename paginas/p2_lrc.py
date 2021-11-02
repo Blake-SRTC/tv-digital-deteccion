@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter.font import BOLD
 
 from algoritmos.lrc import *
+from algoritmos.noise_2_bits import *
 ######################################################################################################
 # Pagina 2
 def tab2(root, common_img, bits_n, bits_p):
@@ -39,6 +40,13 @@ def tab2(root, common_img, bits_n, bits_p):
     print(bits_p)
     print(lrc_codificado)
     print(lrc_1)
+
+    print('Ruido')
+    bits_ruido = noise(bits_p)
+    print(bits_ruido)
+    print(bits_p)
+    
+
 
 
     # BOTON DE TRANSMITIR

@@ -1,7 +1,7 @@
 from tkinter import *
 ######################################################################################################
 # Pagina 3
-def tab3(root, common_img):
+def tab3(root, common_img, bit_n, bits_p):
     pagina1 = Toplevel(root)
     pagina1.geometry("1200x800")
     pagina1.title('CRC')

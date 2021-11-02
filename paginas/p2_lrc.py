@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter.font import BOLD
 
 from algoritmos.lrc import *
-from algoritmos.noise_2_bits import *
+from algoritmos.noise_1_bits import *
 ######################################################################################################
 # Pagina 2
 def tab2(root, common_img, bits_n, bits_p):
@@ -42,12 +42,10 @@ def tab2(root, common_img, bits_n, bits_p):
     print(lrc_1)
 
     print('Ruido')
-    bits_ruido = noise(bits_p)
+    bits_ruido = noise(bits_p, 'lrc')
     print(bits_ruido)
     print(bits_p)
     
-
-
 
     # BOTON DE TRANSMITIR
     btn2_transmitir = Button(pagina1, text='Transmitir', font=('Times_New_Roman',15, BOLD), image=common_img, compound='c', height=50, width=200)

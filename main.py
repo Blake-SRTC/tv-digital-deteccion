@@ -11,8 +11,7 @@ from algoritmos.bits import *
 root=Tk()
 root.title('Verificacion de Errores')
 root.geometry("1200x800")
-
-
+#root.configure(bg='#09009B')
 
 ######################################################################################################
 # Resultados 1
@@ -53,10 +52,13 @@ def paginas(num):
         tab1(root, common_img, bits_normales, bits_puros)
     elif num == '2':
         tab2(root, common_img, bits_normales, bits_puros)
+    elif num == '3':
+        tab3(root, common_img, bits_normales, bits_puros)
+    elif num == '4':
+        tab4(root, common_img, bits_normales, bits_puros)
+    else:
+        print('Algo paso y solo Dios sabe que paso :(')
         
-
-
-
 ######################################################################################################
 # Menu Pirncipal
 
@@ -90,13 +92,13 @@ lbl_binario = Label(root, text='Binario :  ',font=('Times_New_Roman',10, BOLD), 
 lbl_binario.place(x=100, y=400)
 
 # BOTONOES DE METODOS
-button1=Button(root,text='VRC',font=('Times_New_Roman',15), image=common_img, command=lambda: paginas('1'), activebackground='blue', padx=1, pady=10, width=150, height=50, compound='c')
+button1=Button(root,text='VRC',font=('Times_New_Roman',15), image=common_img, command=lambda: paginas('1'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
 button1.place(x=400, y=500)
-button2=Button(root,text='LRC',font=('Times_New_Roman',15), image=common_img, command=lambda: paginas('2'), activebackground='blue', padx=1, pady=10, width=150, height=50, compound='c')
+button2=Button(root,text='LRC',font=('Times_New_Roman',15), image=common_img, command=lambda: paginas('2'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
 button2.place(x=650, y=500)
-button3=Button(root,text='CRC',font=('Times_New_Roman',15), image=common_img, command=lambda: tab3(root, common_img), activebackground='blue', padx=1, pady=10, width=150, height=50, compound='c')
+button3=Button(root,text='CRC',font=('Times_New_Roman',15), image=common_img, command=lambda: paginas('3'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
 button3.place(x=400, y=650)
-button4=Button(root,text='CHECKSUM',font=('Times_New_Roman',15), image=common_img, command=lambda: tab4(root, common_img), activebackground='blue', padx=1, pady=10, width=150, height=50, compound='c')
+button4=Button(root,text='CHECKSUM',font=('Times_New_Roman',15), image=common_img, command=lambda: paginas('4'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
 button4.place(x=650, y=650)
 
 root.mainloop()

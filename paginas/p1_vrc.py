@@ -58,7 +58,7 @@ def tab1(root, common_img, bits_normales, bits_desglosados):
             y = "".join(i)        
             trama_errada2.append(y)
         # Label bits condificados
-        txt3 = 'Transminitos: '
+        txt3 = 'Transmitidos: '
         for i in trama_errada2:
             txt3 = txt3 + i + ' : '
         lbl_errados['text']=txt3

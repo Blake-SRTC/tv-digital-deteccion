@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter.font import BOLD
 
 from algoritmos.vrc import *
-from algoritmos.noise_1_bit import *
+from algoritmos.noise_1_bits import *
 
 #from main import *
 
@@ -50,7 +50,7 @@ def tab1(root, common_img, bits_normales, bits_desglosados):
     def transmitir():
         # Tramas con posibles errores
         trama_errada = []
-        trama_errada = noise(vrc_1)
+        trama_errada = noise(vrc_1,'vrc')
         print('Grupo Transmitido')
         print(trama_errada)
         trama_errada2 = []

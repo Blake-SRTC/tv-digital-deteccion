@@ -18,9 +18,9 @@ def tab1(root, common_img, bits_normales, bits_desglosados):
     label1=Label(pagina1,text='VRC', font=('Times_New_Roman',20), width=1000 , height=50, image=common_img, compound='c')
     label1.place(x=100, y=10)
 
-    lbl_bits_normales = Label(pagina1, text='Bits: ',font=('Times_New_Roman',10, BOLD), image=common_img, compound='c', height=50)
+    lbl_bits_normales = Label(pagina1, text='Bits: ',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
     lbl_bits_normales.place(x=100, y=100)
-    lbl_bits_codificados = Label(pagina1, text='VRC: ',font=('Times_New_Roman',10, BOLD), image=common_img, compound='c', height=50)
+    lbl_bits_codificados = Label(pagina1, text='VRC: ',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
     lbl_bits_codificados.place(x=100, y=175)
 
     # Codificacion VRC
@@ -71,13 +71,13 @@ def tab1(root, common_img, bits_normales, bits_desglosados):
         print(vrc_1)
 
     # BOTON DE TRANSMITIR
-    btn_transmitir = Button(pagina1, text='Transmitir', font=('Times_New_Roman',15, BOLD), image=common_img, compound='c', height=50, width=200, command=transmitir)
+    btn_transmitir = Button(pagina1, text='Transmitir', font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50, width=200, command=transmitir)
     btn_transmitir.place(x=500, y=250)
     # Label del Ruido
-    lbl_errados = Label(pagina1, text='Posible trama errada',font=('Times_New_Roman',10, BOLD), image=common_img, compound='c', height=50)
+    lbl_errados = Label(pagina1, text='Posible trama errada',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
     lbl_errados.place(x=100, y=325)
      # Label Comprobacion VRC
-    lbl_comprobado = Label(pagina1, text='Comprobacion',font=('Times_New_Roman',10, BOLD), image=common_img, compound='c', height=50)
+    lbl_comprobado = Label(pagina1, text='Comprobacion',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
     lbl_comprobado.place(x=100, y=400)
 
     # def cerrar():

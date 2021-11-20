@@ -78,7 +78,7 @@ label1.place(x=200, y=10)
 entry1 = Entry(root, font=('Times_New_Roman',25))
 entry1.place(x=100, y=100, width=1000, height=50)
 # BOTON ENVIO DE DATOS
-enviar = Button(root, text='Enviar',font=('Times_New_Roman',15), image=common_img, compound='c', width=200, height=50, command=lambda: resultados1(entry1))
+enviar = Button(root, text='Enviar',font=('Times_New_Roman',15, BOLD), image=common_img, compound='c', width=200, height=50, command=lambda: resultados1(entry1))
 enviar.place(x=500, y=175)
 
 # ETIQUETAS DE RESULTADO
@@ -90,13 +90,13 @@ lbl_binario = Label(root, text='Binario :  ',font=('Times_New_Roman',20, BOLD), 
 lbl_binario.place(x=100, y=400)
 
 # BOTONOES DE METODOS
-button1=Button(root,text='VRC',font=('Times_New_Roman',15), image=common_img, command=lambda: paginas('1'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
+button1=Button(root,text='VRC',font=('Times_New_Roman',15, BOLD), image=common_img, command=lambda: paginas('1'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
 button1.place(x=400, y=500)
-button2=Button(root,text='LRC',font=('Times_New_Roman',15), image=common_img, command=lambda: paginas('2'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
+button2=Button(root,text='LRC',font=('Times_New_Roman',15, BOLD), image=common_img, command=lambda: paginas('2'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
 button2.place(x=650, y=500)
-button3=Button(root,text='CRC',font=('Times_New_Roman',15), image=common_img, command=lambda: paginas('3'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
+button3=Button(root,text='CRC',font=('Times_New_Roman',15, BOLD), image=common_img, command=lambda: paginas('3'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
 button3.place(x=400, y=650)
-button4=Button(root,text='CHECKSUM',font=('Times_New_Roman',15), image=common_img, command=lambda: paginas('4'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
+button4=Button(root,text='CHECKSUM',font=('Times_New_Roman',15, BOLD), image=common_img, command=lambda: paginas('4'), activebackground='white', padx=1, pady=10, width=150, height=50, compound='c')
 button4.place(x=650, y=650)
 
 root.mainloop()

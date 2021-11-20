@@ -9,5 +9,7 @@ def tab3(root, common_img, bit_n, bits_p):
     label1=Label(pagina1,text='CRC', font=('Times_New_Roman',20), width=800 , height=50, image=common_img, compound='c')
     label1.place(x=200, y=10)
 
-    a = ["1","0","0","1"]
-    polinomio_crc(a)
+    a = ["1","0","1","1"]
+    b = polinomio_crc(a)
+
+    print(b)

@@ -2,8 +2,13 @@ from tkinter import *
 from tkinter.font import BOLD
 from algoritmos.polinomio import *
 from algoritmos.crc import *
+from algoritmos.noise_1_bits import *
 ######################################################################################################
 # Pagina 3
+
+bit_crc = []
+polinomio = []
+
 def tab3(root, common_img, bits_n, bits_p):
     pagina3 = Toplevel(root)
     pagina3.geometry("1200x800")
@@ -35,7 +40,9 @@ def tab3(root, common_img, bits_n, bits_p):
         txt1 = txt1 + i + ' : '
     lbl2_bits_normales['text']=txt1
 
+
     def comprobar_polinomio(entrada):
+        global polinomio
         polinomio = entrada.get()
        
         #a = ["1","0","1","1"]
@@ -46,7 +53,8 @@ def tab3(root, common_img, bits_n, bits_p):
             lbl4_estado['text']='True'         
             #print(validez_polinomio)
 
-            bit_crc = crc(polinomio,bits_p)
+            global bit_crc
+            bit_crc, colas = crc(polinomio,bits_p)
 
             # Para representacion grafica
             crc_codificado = []
@@ -60,8 +68,57 @@ def tab3(root, common_img, bits_n, bits_p):
                 txt2 = txt2 + i + ':'
             lbl5_bits_codificados['text'] = txt2
 
-
         else:
             lbl4_estado['bg']='red'
             lbl4_estado['text']='False'
+            lbl5_bits_codificados['text'] = 'CRC: Fail'
             print(validez_polinomio)
+
+    def transmitir():
+        bits_ruido = noise(bit_crc, 'crc')
+        # Para representacion grafica
+        crc_ruido = []
+        txt3 = 'Transmitido: '
+        for i in bits_ruido:
+            x = "".join(i)
+            crc_ruido.append(x)
+
+        for i in crc_ruido:
+            txt3 = txt3 + i + ':'
+        lbl2_crc_errados['text'] = txt3
+
+        # Comprobacion CRC
+        print('bits comprobados')
+        bits_analizados, validez =comprobacion_crc(polinomio,bits_ruido)
+
+        # Para representacion grafica
+        crc_analizado = []
+        txt4 = 'Comprobado: '
+        for i in bits_analizados:
+            x = "".join(i)
+            crc_analizado.append(x)
+
+        for i in crc_analizado:
+            txt4 = txt4 + i + ':'
+        lbl2_crc_comprobado['text'] = txt4
+        # Para representacion grafica
+        txt5 = 'Comprobado: '
+        for i in validez:
+            txt5 = txt5 + i + ' : '
+        lbl3_crc_comprobado['text'] = txt5
+
+          
+    
+    # BOTON DE TRANSMITIR
+    btn_transmitir = Button(pagina3, text='Transmitir', font=('Times_New_Roman',20, BOLD), command=transmitir,image=common_img, compound='c', height=50, width=200)
+    btn_transmitir.place(x=500, y=325)
+    # Label del Ruido
+    lbl2_crc_errados = Label(pagina3, text='Posible trama errada',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
+    lbl2_crc_errados.place(x=100, y=400)
+    # Label Comprobacion CRC
+    lbl2_crc_comprobado = Label(pagina3, text='Comprobacion',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
+    lbl2_crc_comprobado.place(x=100, y=475)
+     # Label Comprobacion CRC
+    lbl3_crc_comprobado = Label(pagina3, text='Comprobacion',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
+    lbl3_crc_comprobado.place(x=100, y=550)
+

@@ -73,5 +73,22 @@ def crc(polinomio,bits):
 
     print('Salida')
     print(bits_crc)
-    return bits_crc
-        
+    return bits_crc, colas_crc
+
+def comprobacion_crc(polinomio, bits):
+
+    validez = []
+
+    comprobados, colas = crc(polinomio, bits)
+    for i in colas:
+        zeros = []
+        for j in range(len(i)):
+            zeros.append('0')
+
+        if i == zeros:
+            validez.append('Aceptado')
+        else:
+            validez.append('Rechazado')
+    
+    print(validez)
+    return comprobados, validez

@@ -76,6 +76,6 @@ def tab2(root, common_img, bits_n, bits_p):
     # Label del Ruido
     lbl2_errados = Label(pagina1, text='Posible trama errada',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
     lbl2_errados.place(x=100, y=325)
-     # Label Comprobacion LRC
+    # Label Comprobacion LRC
     lbl2_comprobado = Label(pagina1, text='Comprobacion',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
     lbl2_comprobado.place(x=100, y=400)

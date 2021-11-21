@@ -35,7 +35,7 @@ def condiciones(polinomio, condicion):
 
         # Comprobar si usar [0][0] o condicion_1
         if temporal[0] == '1':
-            # Armado de temp
+            # Armado de temp de resultados
             for j in range(len(temporal)):
                 if condicion[j] == temporal[j]:
                     temp.append('0')

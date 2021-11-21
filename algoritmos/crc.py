@@ -17,9 +17,12 @@ def crc(polinomio,bits):
     for i in range(len(polinomio)):
         vacio.append('0')
 
+    bits_crc = []
     # Ciclos de grupos de bits grandes
+    colas_crc = []
     for i in divisor:
-
+        
+        print('entrada')
         print(i)
         # ciclos de operaciones necesarias
         temporal = []
@@ -53,9 +56,22 @@ def crc(polinomio,bits):
                     elif vacio[k] != temporal[k]:
                         temp.append('1')
 
-            print('ciclos' + str(x))
-            print('temporal')
-            print(temporal)
-            print('Temp')        
-            print(temp)
+            # print('ciclos' + str(x))
+            # print('temporal')
+            # print(temporal)
+            # print('Temp')        
+            # print(temp)
+
+        del temp[0]
+        colas_crc.append(temp)
+    print('colas')
+    print(colas_crc)
+
+    bits_crc = []
+    for i in range(len(bits)):
+        bits_crc.append(bits[i]+colas_crc[i])
+
+    print('Salida')
+    print(bits_crc)
+    return bits_crc
         

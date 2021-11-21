@@ -45,7 +45,22 @@ def tab3(root, common_img, bits_n, bits_p):
             lbl4_estado['bg']='green'
             lbl4_estado['text']='True'         
             #print(validez_polinomio)
-            crc(polinomio,bits_p)
+
+            bit_crc = crc(polinomio,bits_p)
+
+            # Para representacion grafica
+            crc_codificado = []
+            txt2 = 'CRC: '
+            for i in bit_crc:
+                x = "".join(i)
+                crc_codificado.append(x)
+            print(crc_codificado)
+
+            for i in crc_codificado:
+                txt2 = txt2 + i + ':'
+            lbl5_bits_codificados['text'] = txt2
+
+
         else:
             lbl4_estado['bg']='red'
             lbl4_estado['text']='False'

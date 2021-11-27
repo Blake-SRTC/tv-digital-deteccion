@@ -86,7 +86,7 @@ lbl_alfabeto = Label(root, text='Alfabeto : ',font=('Times_New_Roman',20, BOLD),
 lbl_alfabeto.place(x=100, y=250)
 lbl_ascii = Label(root, text='ASCII :    ',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
 lbl_ascii.place(x=100, y=325)
-lbl_binario = Label(root, text='Binario :  ',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
+lbl_binario = Label(root, text='Binario :  ',font=('Times_New_Roman',15, BOLD), image=common_img, compound='c', height=50)
 lbl_binario.place(x=100, y=400)
 
 # BOTONOES DE METODOS

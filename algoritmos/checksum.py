@@ -14,12 +14,12 @@ def checksum(bits):
     tramas = int(len(bits)/2)
     print(bits)
     y = 2
-    z = 2
+    z = 3
     for x in range(tramas):
         # Accion de conteo por derecha
         for j in range(7, -1, -1):
             # Suma vertical del contador
-            for i in range(z-2,z,1):
+            for i in range(z-3,z,1):
                 if bits[i][j] == '1':
                     contador += 1
             # Reglas de Checksum
@@ -35,25 +35,41 @@ def checksum(bits):
             elif contador == 3:
                 temporal.append('1')
                 contador = 1
+            # Caso especial en ruido
+            elif contador > 3:
+                temporal.append('0')
 
-        # # Acarreo al final 
-        # print(j)
-        # if j == 0 and contador == 1:
-        #     tempo = []
-        #     cont = 0
-        #     print('Toco')
-        #     for t in range(temporal):
-        #         if t == '1':
-        #             tempo.append('0')
-        #             cont += 1
-        #         elif t == '0':
-        #             tempo.append('1')
-        #             cont +=0
+        temporal.reverse()
+        extra = []
+        # Acarreo al final 
+        print(j)
+        if j == 0 and contador == 1:
+            print('entrante acarreo extra')
+            print(temporal)
+            cont = 1
+            # Accion de conteo por derecha
+            for h in range(7, -1, -1):
 
-        z += 2
+                # Reglas de acarreo
+                if cont == 1 and temporal[h] == '1':
+                    extra.append('0')
+                    cont = 1
+                elif cont == 1 and temporal[h] == '0':
+                    extra.append('1')
+                    cont = 0
+                elif cont == 0 and temporal[h] == '1':
+                    extra.append('1')
+                elif cont == 0 and temporal[h] == '0':
+                    extra.append(temporal[h])
+            extra.reverse()
+            temporal = extra
+        # Fin acarreo final
+
+        # Ubicacion de la trama de checksum
+        z += 3
 
         # Invierte la suma total para que tenga coherencia
-        temporal.reverse()
+        #temporal.reverse()
         complemento = []
         
         for i in temporal:
@@ -69,4 +85,5 @@ def checksum(bits):
 
     #print(temp)
     print(checksum_final)
+    return checksum_final
 

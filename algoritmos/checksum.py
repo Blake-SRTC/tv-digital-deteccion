@@ -21,7 +21,7 @@ def checksum(bits, f):
 
 
     for x in range(tramas):
-        print(z)
+        
         # Accion de conteo por derecha
         for j in range(7, -1, -1):
             # Suma vertical del contador
@@ -48,7 +48,7 @@ def checksum(bits, f):
         temporal.reverse()
         extra = []
         # Acarreo al final 
-        print(j)
+        
         if j == 0 and contador == 1:
             print('entrante acarreo extra')
             print(temporal)
@@ -99,4 +99,8 @@ def checksum(bits, f):
 def checksum_comprobacion(bits_cs, n):
     print('comprobando')
     comprobacion = checksum(bits_cs, n)
+
+    validez = []   
+
+    return comprobacion, validez
 

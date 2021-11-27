@@ -13,6 +13,9 @@ def noise(bits_originales, metodo):
     elif metodo == 'crc':
         n = 7
         x = len(bits_originales[0])
+    elif metodo == 'cs':
+        n = 7
+        x = len(bits_originales[0])
     
     # Lista vacia de 0 con la longitud de la trama original
     bits_corrompidos = [['0' for col in range(x)] for row in range(len(bits_originales))]

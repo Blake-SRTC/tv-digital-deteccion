@@ -26,7 +26,7 @@ def tab4(root, common_img, bit_n, bits_p):
     b = [['1','1','0','1','1','0','1','0'], ['1','0','0','0','1','0','1','0']]
     c = [['1','1','0','1','1','0','1','0'], ['1','0','0','0','1','0','1','0'], ['1','0','0','1','1','0','1','0']]
     
-    cs = checksum(c)
+    cs = checksum(bits_p, 2)
 
     # Label bits condificados
     cs_codificado = [] 
@@ -39,4 +39,6 @@ def tab4(root, common_img, bit_n, bits_p):
     for i in cs_codificado:
         txt2 = txt2 + i + ' : '
     lbl2_bits_codificados['text']=txt2
+
+    checksum_comprobacion(cs, 3)
 

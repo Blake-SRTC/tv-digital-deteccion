@@ -1,8 +1,8 @@
 ######################################################################################################
 # CHECKSUM
 
-def checksum(bits):
-
+def checksum(bits, f):
+    
     temporal = []
     temp = []
     contador = 0
@@ -11,15 +11,21 @@ def checksum(bits):
     for i in bits:
         checksum_final.append(i)
 
-    tramas = int(len(bits)/2)
     print(bits)
     y = 2
-    z = 3
+    z = f
+    if f == 2:
+        tramas = int(len(bits)/2)
+    elif f == 3:
+        tramas = int(len(bits)/f)
+
+
     for x in range(tramas):
+        print(z)
         # Accion de conteo por derecha
         for j in range(7, -1, -1):
             # Suma vertical del contador
-            for i in range(z-3,z,1):
+            for i in range(z-f,z,1):
                 if bits[i][j] == '1':
                     contador += 1
             # Reglas de Checksum
@@ -66,7 +72,7 @@ def checksum(bits):
         # Fin acarreo final
 
         # Ubicacion de la trama de checksum
-        z += 3
+        z += f
 
         # Invierte la suma total para que tenga coherencia
         #temporal.reverse()
@@ -78,7 +84,10 @@ def checksum(bits):
             elif i == '1':
                 complemento.append('0')
         # Grupo de bits complemento
-        checksum_final.insert(x+y,complemento)
+        if f == 3:
+            checksum_final[x+y] = complemento
+        else:
+            checksum_final.insert(x+y,complemento)
         y += 2
         #temp.append(complemento)
         temporal = []
@@ -86,4 +95,8 @@ def checksum(bits):
     #print(temp)
     print(checksum_final)
     return checksum_final
+
+def checksum_comprobacion(bits_cs, n):
+    print('comprobando')
+    comprobacion = checksum(bits_cs, n)
 

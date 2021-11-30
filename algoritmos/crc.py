@@ -67,6 +67,12 @@ def crc(polinomio,bits):
     print('colas')
     print(colas_crc)
 
+    # Eliminar el crc anterior para despues poner el comprobado
+    for c in bits:
+        if len(c) > 8:
+            c.pop()
+            c.pop()
+
     bits_crc = []
     for i in range(len(bits)):
         bits_crc.append(bits[i]+colas_crc[i])
@@ -80,6 +86,9 @@ def comprobacion_crc(polinomio, bits):
     validez = []
 
     comprobados, colas = crc(polinomio, bits)
+
+    
+
     for i in colas:
         zeros = []
         for j in range(len(i)):
@@ -91,4 +100,5 @@ def comprobacion_crc(polinomio, bits):
             validez.append('Rechazado')
     
     print(validez)
+    print(comprobados)
     return comprobados, validez

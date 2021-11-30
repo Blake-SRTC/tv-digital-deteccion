@@ -100,7 +100,14 @@ def checksum_comprobacion(bits_cs, n):
     print('comprobando')
     comprobacion = checksum(bits_cs, n)
 
-    validez = []   
+    validez = []
+    for i in range(2, len(comprobacion),3):
+        print('check comprobado')
+        print(comprobacion[i])
+        if comprobacion[i] == ['0','0','0','0','0','0','0','0']:
+            validez.append('Bloque Aceptado')
+        else:
+            validez.append('Bloque Rechazado')  
 
     return comprobacion, validez
 

@@ -66,7 +66,7 @@ def tab4(root, common_img, bit_n, bits_p):
             txt3 = txt3 + i + ' : '
         lbl2_comprobado['text']=txt3
 
-        txt4 = 'Comprobacion'
+        txt4 = 'Comprobacion: '
         for i in validez:
             txt4 = txt4 + i + ' : '
         lbl3_cs_comprobado['text'] = txt4

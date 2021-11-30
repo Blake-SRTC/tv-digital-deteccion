@@ -4,10 +4,9 @@ from tkinter.font import BOLD
 from algoritmos.vrc import *
 from algoritmos.noise_1_bits import *
 
-#from main import *
-
 ######################################################################################################
 # Pagina 1
+
 def tab1(root, common_img, bits_normales, bits_desglosados):
     pagina1 = Toplevel(root)
     pagina1.geometry("1200x800")
@@ -79,13 +78,3 @@ def tab1(root, common_img, bits_normales, bits_desglosados):
      # Label Comprobacion VRC
     lbl_comprobado = Label(pagina1, text='Comprobacion',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
     lbl_comprobado.place(x=100, y=400)
-
-    # def cerrar():
-    #     print('Desglosados')
-    #     print(bits_desglosados)
-    #     resultados1()
-    #     pagina1.destroy()
-    
-    # pagina1.protocol('WM_DELETE_WINDOW', cerrar)
-
-    # Revisar como no alterar la variable global de bits desglosados

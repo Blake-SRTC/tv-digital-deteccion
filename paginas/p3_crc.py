@@ -47,11 +47,13 @@ def tab3(root, common_img, bits_n, bits_p):
         #a = ["1","0","1","1"]
         # Envio de polinomio a comprobar
         validez_polinomio = polinomio_crc(polinomio)
+
         if validez_polinomio:
             lbl4_estado['bg']='green'
             lbl4_estado['text']='True'         
             #print(validez_polinomio)
 
+            # Codificacion CRC
             global bit_crc
             bit_crc, colas = crc(polinomio,bits_p)
 
@@ -74,7 +76,9 @@ def tab3(root, common_img, bits_n, bits_p):
             print(validez_polinomio)
 
     def transmitir():
+
         bits_ruido = noise(bit_crc, 'crc')
+
         # Para representacion grafica
         crc_ruido = []
         txt3 = 'Transmitido: '

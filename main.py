@@ -44,6 +44,7 @@ def resultados1(entrada):
 ######################################################################################################
 # Paginas
 def paginas(num):
+    # llamar de nuevo al metodo resultados1 arregla un bug de continuidad de los bits originales
     resultados1(entry1)
     if num == '1':
         tab1(root, common_img, bits_normales, bits_puros)

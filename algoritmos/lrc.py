@@ -19,8 +19,12 @@ def lrc(bits_originales):
 
 def comprobacion_lrc(t_origen, t_ruido):
     mensaje = ''
+    print('lrc test')
+    print(t_origen)
+    print(t_ruido)
     if t_origen == t_ruido:
         mensaje = 'Bloque Aceptado'
     else:
         mensaje = 'Bloque Rechazado'
+    print(mensaje)
     return mensaje

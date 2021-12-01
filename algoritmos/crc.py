@@ -3,16 +3,19 @@
 
 def crc(polinomio,bits):
 
+    # Cantidad de ceros para el proceso
     zeros = []
     for i in range(len(polinomio)-1):
         zeros.append('0')
     #print(zeros)
 
+    # agrega la cola de ceros a los bits originales
     divisor = []
     for i in bits:        
         divisor.append(i+zeros)
     #print(divisor)
 
+    # grupo de ceros para la division en caso de que el primer valor sera 0 en la division
     vacio = []
     for i in range(len(polinomio)):
         vacio.append('0')
@@ -22,13 +25,14 @@ def crc(polinomio,bits):
     colas_crc = []
     for i in divisor:
         
-        print('entrada')
-        print(i)
+        # print('entrada')
+        # print(i)
         # ciclos de operaciones necesarias
         temporal = []
         temp = []
         for x in range(len(i)-len(zeros)):
 
+            # division inicial
             if temporal == []:  
                 for j in range(len(polinomio)):
                     temporal.append(i[j])
@@ -39,6 +43,7 @@ def crc(polinomio,bits):
                 temporal = temp.copy()
                 temporal.append(i[x+len(polinomio)-1])
 
+            # divisiones porteriores
             temp = []
             # Comprobar si usar [0][0] o condicion_1
             if temporal[0] == '1':
@@ -78,7 +83,7 @@ def crc(polinomio,bits):
         bits_crc.append(bits[i]+colas_crc[i])
 
     print('Salida')
-    print(bits_crc)
+    #print(bits_crc)
     return bits_crc, colas_crc
 
 def comprobacion_crc(polinomio, bits):
@@ -86,8 +91,6 @@ def comprobacion_crc(polinomio, bits):
     validez = []
 
     comprobados, colas = crc(polinomio, bits)
-
-    
 
     for i in colas:
         zeros = []
@@ -100,5 +103,5 @@ def comprobacion_crc(polinomio, bits):
             validez.append('Rechazado')
     
     print(validez)
-    print(comprobados)
+    #print(comprobados)
     return comprobados, validez

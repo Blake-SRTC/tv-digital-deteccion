@@ -4,12 +4,15 @@ import random
 
 def noise(bits_originales, metodo):
     # Meto que Requiere la funcion ruido
+    print('Ruido de unico bit')
     if metodo == 'lrc':
         n = 7
         x = 8
     elif metodo == 'vrc':
-        n = 6
-        x = 8
+        #n = 6
+        n = 7
+        #x = 8
+        x = len(bits_originales[0])
     elif metodo == 'crc':
         n = 7
         x = len(bits_originales[0])
@@ -26,7 +29,8 @@ def noise(bits_originales, metodo):
         # Probabilidad de corromper una trama de 8 bits
         probabilidad = random.randint(0,1)
         print('probabilidad Trama ' + str(i) + ': ' + str(probabilidad))
-        
+
+        # x Longitud constante de 8 bits
         if probabilidad == 0:
             for j in range(x):
                 bits_corrompidos[i][j] = bits_originales[i][j]
@@ -36,6 +40,7 @@ def noise(bits_originales, metodo):
             print('aleatorio bit: ' + str(aleatorio))
             
             for j in range(x):
+                # Copio la trama de bits al grupo de ceros vacio
                 bits_corrompidos[i][j] = bits_originales[i][j]    
                 if j == aleatorio:
                     if bits_corrompidos[i][j] == '0':

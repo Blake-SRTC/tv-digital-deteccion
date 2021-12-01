@@ -23,7 +23,10 @@ def tab1(root, common_img, bits_normales, bits_desglosados):
 
     # Codificacion VRC
     b_separados = list(bits_desglosados)
+
+    # Funcion / metodo VRC
     vrc_1 = vrc(b_separados)
+
     print('vrc')
     print(vrc_1)
     
@@ -66,7 +69,7 @@ def tab1(root, common_img, bits_normales, bits_desglosados):
         print(comprobado)
         lbl_comprobado['text']='Comprobacion: ' + comprobado
 
-        print(vrc_1)
+        #print(vrc_1)
 
     # BOTON DE TRANSMITIR
     btn_transmitir = Button(pagina1, text='Transmitir', font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50, width=200, command=transmitir)

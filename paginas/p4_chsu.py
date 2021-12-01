@@ -61,12 +61,12 @@ def tab4(root, common_img, bit_n, bits_p):
             l = "".join(i)        
             cs_comprobacion.append(l)
 
-        txt3 = 'Recepcion: '
+        txt3 = 'Comprobacion: '
         for i in cs_comprobacion:
             txt3 = txt3 + i + ' : '
         lbl2_comprobado['text']=txt3
 
-        txt4 = 'Comprobacion: '
+        txt4 = 'Estado: '
         for i in validez:
             txt4 = txt4 + i + ' : '
         lbl3_cs_comprobado['text'] = txt4
@@ -78,8 +78,8 @@ def tab4(root, common_img, bit_n, bits_p):
     lbl2_errados = Label(pagina4, text='Posible trama errada',font=('Times_New_Roman',17, BOLD), image=common_img, compound='c', height=50)
     lbl2_errados.place(x=100, y=325)
     # Label Comprobacion LRC
-    lbl2_comprobado = Label(pagina4, text='Recepcion',font=('Times_New_Roman',17, BOLD), image=common_img, compound='c', height=50)
+    lbl2_comprobado = Label(pagina4, text='Comprobacion',font=('Times_New_Roman',17, BOLD), image=common_img, compound='c', height=50)
     lbl2_comprobado.place(x=100, y=400)
     # Label Comprobacion Checksum
-    lbl3_cs_comprobado = Label(pagina4, text='Comprobacion',font=('Times_New_Roman',17, BOLD), image=common_img, compound='c', height=50)
+    lbl3_cs_comprobado = Label(pagina4, text='Estado',font=('Times_New_Roman',17, BOLD), image=common_img, compound='c', height=50)
     lbl3_cs_comprobado.place(x=100, y=500)

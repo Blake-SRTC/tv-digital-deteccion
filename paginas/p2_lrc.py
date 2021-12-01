@@ -31,6 +31,7 @@ def tab2(root, common_img, bits_n, bits_p):
     y = "".join(lrc_codificado) 
     lrc_1 = []
     lrc_1 = bits_n.copy()
+    # Agregando la cola CRC
     lrc_1.append(y)
     for i in lrc_1:
         txt2 = txt2 + i + ' : '
@@ -39,6 +40,8 @@ def tab2(root, common_img, bits_n, bits_p):
 
     def transmitir():
         bits_ruido = noise(bits_p, 'lrc')
+
+        # Recibiendo la cola de los bits con ruido
         ruido_codificado = lrc(bits_ruido)
 
         txt3 = 'Transmitidos: '

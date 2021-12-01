@@ -36,21 +36,6 @@ def tab2(root, common_img, bits_n, bits_p):
         txt2 = txt2 + i + ' : '
     lbl2_bits_codificados['text']=txt2
 
-    # print('Ruido')
-    # bits_ruido = noise(bits_p, 'lrc')
-    # print('Bits ruido')
-    # print(bits_ruido)
-    # print('bits originales')
-    # print(bits_p)
-    
-    # # Comprobacion
-    # ruido_codificado = lrc(bits_ruido)
-    # print('Trama de ruido')
-    # print(ruido_codificado)
-    # print('Trama original')
-    # print(lrc_codificado)
-
-    # comprobacion_lrc(lrc_codificado, ruido_codificado)
 
     def transmitir():
         bits_ruido = noise(bits_p, 'lrc')

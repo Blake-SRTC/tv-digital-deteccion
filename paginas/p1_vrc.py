@@ -12,7 +12,6 @@ def tab1(root, common_img, bits_normales, bits_desglosados):
     pagina1.geometry("1200x800")
     pagina1.title('VRC')
     
-    
     # TITULO
     label1=Label(pagina1,text='VRC', font=('Times_New_Roman',20), width=1000 , height=50, image=common_img, compound='c')
     label1.place(x=100, y=10)

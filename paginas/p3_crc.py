@@ -31,7 +31,7 @@ def tab3(root, common_img, bits_n, bits_p):
     lbl4_estado = Label(pagina3, text='ESTADO',font=('Times_New_Roman',15, BOLD), image=common_img, compound='c', width=100,height=50, bg='gray', foreground='white')
     lbl4_estado.place(x=1000, y=175)
 
-    lbl5_bits_codificados = Label(pagina3, text='CRC: ',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
+    lbl5_bits_codificados = Label(pagina3, text='CRC: ',font=('Times_New_Roman',17, BOLD), image=common_img, compound='c', height=50)
     lbl5_bits_codificados.place(x=100, y=250)
 
     # Label bits originales
@@ -39,7 +39,6 @@ def tab3(root, common_img, bits_n, bits_p):
     for i in bits_n:
         txt1 = txt1 + i + ' : '
     lbl2_bits_normales['text']=txt1
-
 
     def comprobar_polinomio(entrada):
         global polinomio
@@ -65,7 +64,7 @@ def tab3(root, common_img, bits_n, bits_p):
             print(crc_codificado)
 
             for i in crc_codificado:
-                txt2 = txt2 + i + ':'
+                txt2 = txt2 + i + ' : '
             lbl5_bits_codificados['text'] = txt2
 
         else:
@@ -84,7 +83,7 @@ def tab3(root, common_img, bits_n, bits_p):
             crc_ruido.append(x)
 
         for i in crc_ruido:
-            txt3 = txt3 + i + ':'
+            txt3 = txt3 + i + ' : '
         lbl2_crc_errados['text'] = txt3
 
         # Comprobacion CRC
@@ -99,7 +98,7 @@ def tab3(root, common_img, bits_n, bits_p):
             crc_analizado.append(x)
 
         for i in crc_analizado:
-            txt4 = txt4 + i + ':'
+            txt4 = txt4 + i + ' : '
         lbl2_crc_comprobado['text'] = txt4
         # Para representacion grafica
         txt5 = 'Comprobado: '
@@ -107,18 +106,16 @@ def tab3(root, common_img, bits_n, bits_p):
             txt5 = txt5 + i + ' : '
         lbl3_crc_comprobado['text'] = txt5
 
-          
-    
     # BOTON DE TRANSMITIR
     btn_transmitir = Button(pagina3, text='Transmitir', font=('Times_New_Roman',20, BOLD), command=transmitir,image=common_img, compound='c', height=50, width=200)
     btn_transmitir.place(x=500, y=325)
     # Label del Ruido
-    lbl2_crc_errados = Label(pagina3, text='Posible trama errada',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
+    lbl2_crc_errados = Label(pagina3, text='Posible trama errada',font=('Times_New_Roman',17, BOLD), image=common_img, compound='c', height=50)
     lbl2_crc_errados.place(x=100, y=400)
     # Label Comprobacion CRC
-    lbl2_crc_comprobado = Label(pagina3, text='Comprobacion',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
+    lbl2_crc_comprobado = Label(pagina3, text='Comprobacion',font=('Times_New_Roman',17, BOLD), image=common_img, compound='c', height=50)
     lbl2_crc_comprobado.place(x=100, y=475)
      # Label Comprobacion CRC
-    lbl3_crc_comprobado = Label(pagina3, text='Comprobacion',font=('Times_New_Roman',20, BOLD), image=common_img, compound='c', height=50)
+    lbl3_crc_comprobado = Label(pagina3, text='Comprobacion',font=('Times_New_Roman',17, BOLD), image=common_img, compound='c', height=50)
     lbl3_crc_comprobado.place(x=100, y=550)
 

@@ -71,7 +71,6 @@ def tab4(root, common_img, bit_n, bits_p):
             txt4 = txt4 + i + ' : '
         lbl3_cs_comprobado['text'] = txt4
 
-
     # BOTON DE TRANSMITIR
     btn2_transmitir = Button(pagina4, text='Transmitir', font=('Times_New_Roman',17, BOLD), command=transmitir,image=common_img, compound='c', height=50, width=200)
     btn2_transmitir.place(x=500, y=250)

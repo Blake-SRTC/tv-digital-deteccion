@@ -11,7 +11,6 @@ from algoritmos.bits import *
 root=Tk()
 root.title('Verificacion de Errores')
 root.geometry("1200x800")
-#root.configure(bg='#09009B')
 
 ######################################################################################################
 # Resultados 1
@@ -41,8 +40,6 @@ def resultados1(entrada):
     for i in z:
         txt3 = txt3 + i + ' : '
     lbl_binario['text'] = txt3
-    # print(bits_normales)
-    # print(bits_puros)
 
 ######################################################################################################
 # Paginas

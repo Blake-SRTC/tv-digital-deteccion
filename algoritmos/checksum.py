@@ -48,7 +48,7 @@ def checksum(bits, f):
         temporal.reverse()
         extra = []
         # Acarreo al final 
-        
+        # Controla de acarreo extra
         if j == 0 and contador == 1:
             print('entrante acarreo extra')
             print(temporal)
